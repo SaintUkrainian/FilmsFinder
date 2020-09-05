@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+header {
+    height: 100vh;
+}
+
+#genres-section {
+    height: 100vh;
+}
+
+.logo {
+    padding: 10px 10px;
+}
+
+.genres-list {
+    font-family: 'Squada One', cursive;
+    font-size: 36px;
+}
+
+.genre-category {
+    width: fit-content;
+}
+
+.genres-list li {
+    width: fit-content;
+}
