@@ -10,11 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Squada+One&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/home.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/styles/films.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js" defer></script>
     <script src="${pageContext.request.contextPath}/scripts/home.js" defer></script>
     <title>FilmsFinder</title>
 </head>
 <body>
+    <div class="backdrop">
+        <h1>Searching...</h1>
+    </div>
     <header>
         <div class="logo">
             <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -34,6 +38,12 @@
         <ul class="genres-list">
     
         </ul>
+    </section>
+    <hr>
+    <section class="films" id="films-section">
+        <ul id="movie-list">
+
+        </ul >
     </section>
 </body>
 </html>

@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -24,7 +25,7 @@ header {
 
 .genres-list {
     font-family: 'Squada One', cursive;
-    font-size: 36px;
+    font-size: 32px;
 }
 
 .genre-category {
@@ -33,4 +34,28 @@ header {
 
 .genres-list li {
     width: fit-content;
+}
+
+.films {
+    display: none;
+    height: 100vh;
+}
+
+.visible {
+    display: flex !important;
+}
+
+.backdrop {
+    display: none;
+    position: fixed;
+    background-color: rgba(17, 17, 17, 0.8);
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.backdrop h1 {
+    margin: auto;
+    font-size: 48px;
 }
