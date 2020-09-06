@@ -7,8 +7,13 @@
 
 body {
     background-color: #333;
+    background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/19/86/9BlpL0.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     font-family: 'Open Sans', sans-serif;
     color: white;
+    width: 100%;
 }
 
 header {
@@ -17,6 +22,9 @@ header {
 
 #genres-section {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .logo {
@@ -28,8 +36,10 @@ header {
     font-size: 32px;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-content: center;
+    list-style: none;
+    margin-bottom: 10pt;
 }
 
 .genre-category {
@@ -38,6 +48,10 @@ header {
 
 .genres-list li {
     width: fit-content;
+    border: 2px solid whitesmoke;
+    margin: 5px;
+    padding: 5px 10px;
+    background: rgba(51, 51, 51, 0.5);
 }
 
 .films {
@@ -70,4 +84,5 @@ header {
 
 .genre-btn:hover {
     color: antiquewhite;
+    background: rgba(99, 99, 99, 0.9);
 }

@@ -74,6 +74,19 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </header>
         <hr class="hr-list"/>
         <section id="genres-section">
+            <div class="search-text">
+                <h1>Search by Title</h1>
+            </div>
+            <form id="search-film">
+                <div>
+                    <input type="text" id="film-title" placeholder="Search for film">
+                    <input type="submit" value="Search" id="search-btn">
+                </div>
+            </form>
+            <div class="search-text">
+                <h1>Get Films by Genre</h1>
+                <p>You'll get random 20 films, every time you click on genre!</p>
+            </div>
             <ul class="genres-list">
                <div class="genres-container">
                     <li class="genre-btn" id="28">
@@ -146,5 +159,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         <section class="films" id="films-section">
             <ul id="movie-list"></ul>
         </section>
+        <section id="searched-film"></section>
     </body>
 </html>

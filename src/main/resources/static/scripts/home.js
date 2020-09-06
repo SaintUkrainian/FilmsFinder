@@ -1,6 +1,8 @@
+const body = document.querySelector("body");
 const genresListHtml = document.querySelector(".genres-list");
 const movieList = document.getElementById("movie-list");
 const backdrop = document.querySelector(".backdrop");
+const searchForm = document.getElementById("search-film");
 
 // temporarily like that :)
 const hrefFilmsUrl = `http://localhost:8080/#films-section`;
@@ -62,3 +64,21 @@ async function addListenerToGenres() {
 }
 
 addListenerToGenres();
+
+searchForm.addEventListener("submit", async (event) => {
+    const input = document.getElementById("film-title");
+    const regex = /,\s|\s/;
+    event.preventDefault();
+    console.log("Searching for film with title = " + input.value);
+    const title = input.value.toLowerCase().split(regex).join("+");
+    console.log(title);
+    const filmsByTitle = await axios.get(`https://api.themoviedb.org/3/search/movie?api_key=58af3dc3b19432c261816f7a48688477&query=${title}`).then(response => response.data.results);
+    let foundFilm;
+    for (const film of filmsByTitle) {
+        if(film.original_title.toLowerCase().split(regex).join("+") === title){
+            foundFilm = film;
+            break;
+        }
+    }
+    console.log(foundFilm ? foundFilm : "sorry, we couldn't find this film");
+});
