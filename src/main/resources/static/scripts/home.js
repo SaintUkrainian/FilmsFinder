@@ -6,43 +6,14 @@ const backdrop = document.querySelector(".backdrop");
 const hrefFilmsUrl = `http://localhost:8080/#films-section`;
 const hrefGenresUrl = `http://localhost:8080/#genres-section`
 const postFilmsUrl = `http://localhost:8080/films`;
+const genresHtml = document.querySelectorAll(".genre-btn");
 
-let genres = [];
+
 let filmsByGenre = [];
 
-async function getGenres() {
-    genres = await axios
-        .get(
-            "https://api.themoviedb.org/3/genre/movie/list?api_key=58af3dc3b19432c261816f7a48688477&language=en-US"
-        )
-        .then((response) => response.data.genres);
-    for (const genre of genres) {
-        const genreItem = document.createElement("li");
-        genreItem.setAttribute("id", genre.id);
-        genreItem.innerHTML = `
-            <h3 class="genre-category">${genre.name}</h3>
-        `;
+async function addListenerToGenres() {
+    for (const genreItem of genresHtml) {
         genreItem.addEventListener("click", async (event) => {
-            // const id = genreItem.getAttribute("id");
-            // filmsByGenre = await axios
-            //     .get(
-            //         `https://api.themoviedb.org/3/discover/movie?api_key=58af3dc3b19432c261816f7a48688477&with_genres=${id}&page=${Math.floor(
-            //             Math.random() * 1 + 1
-            //         )}`
-            //     )
-            //     .then((response) => response.data.results);
-            //     console.log(filmsByGenre);
-            //     const filmsJava = [];
-            //     for (const film of filmsByGenre) {
-            //         const filmJava = {
-            //             id: film.id,
-            //             title: film.title,
-            //             year: film.release_date.slice(0, 4)
-            //         }
-            //         filmsJava.push(filmJava);
-            //     }
-            //     axios.post(`${document.URL}films`, filmsJava);
-            //     location.href = `${document.URL}films`;
             location.href = hrefGenresUrl;
             document.querySelector(".films").classList.remove("visible");
             backdrop.classList.add("visible");
@@ -51,7 +22,7 @@ async function getGenres() {
             filmsByGenre = await axios
                 .get(
                     `https://api.themoviedb.org/3/discover/movie?api_key=58af3dc3b19432c261816f7a48688477&with_genres=${id}&page=${Math.floor(
-                        Math.random() * 1 + 1
+                        Math.random() * 100
                     )}`
                 )
                 .then((response) => response.data.results);
@@ -73,6 +44,9 @@ async function getGenres() {
                     </div>
                     <div class="movie-element__info">
                         <h5 id="title">${film.title}</h5>
+                        <hr class="hr-list">
+                        <p class="film-info"><span>Release date: </span>${film.release_date}</p>
+                        <p class="film-info"><span>Plot: </span>${film.overview}</p>
                     </div>
                 `;
                 movieList.appendChild(filmElement);
@@ -84,8 +58,7 @@ async function getGenres() {
                 document.querySelector(".films").classList.add("visible");
             }, 2000);
         });
-        genresListHtml.appendChild(genreItem);
     }
 }
 
-getGenres();
+addListenerToGenres();

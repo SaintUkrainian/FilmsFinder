@@ -45,3 +45,22 @@ body {
     flex: 2;
     padding: 1rem;
 }
+
+#title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.film-info {
+    font-family: 'Open Sans', sans-serif !important; 
+}
+
+span {
+    font-weight: bold;
+}
+
+.hr-list {
+    height: 1px;
+    border: none;
+    background-color: white;
+}
