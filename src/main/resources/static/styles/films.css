@@ -116,13 +116,38 @@ input {
     background: rgba(87, 86, 86, 0.8);
 }
 
+#search-btn:focus {
+    outline: none;
+}
+
 .search-text {
     text-align: center;
     margin-bottom: 20pt;
 }
 
-#searched-film {
-    display: none;
-    height: 100vh;
+.searched-element {
+    cursor: pointer;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+    display: flex;
+    background-color: rgba(94, 105, 141, 0.76);
+}
+
+
+.searched-element__image {
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.searched-element__image img {
+    height: 100%;
     width: 100%;
+    object-fit: cover;
+}
+
+.searched-element__info {
+    flex: 2;
+    padding: 1rem;
 }

@@ -86,3 +86,16 @@ header {
     color: antiquewhite;
     background: rgba(99, 99, 99, 0.9);
 }
+
+.searched-film {
+    display: none !important;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+}
+
+.searched-film h1 {
+    margin: auto;
+}
