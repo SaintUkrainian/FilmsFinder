@@ -128,10 +128,12 @@ input {
 .searched-element {
     cursor: pointer;
     margin: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 15px rgb(255, 255, 255);
     border-radius: 10px;
     display: flex;
     background-color: rgba(94, 105, 141, 0.76);
+    width: 100%;
+    margin: auto;
 }
 
 
@@ -150,4 +152,15 @@ input {
 .searched-element__info {
     flex: 2;
     padding: 1rem;
+}
+
+.searched-info {
+    margin-top: 10px;
+}
+
+.wider {
+    width: 70rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

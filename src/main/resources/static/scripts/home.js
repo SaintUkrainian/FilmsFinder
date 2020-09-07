@@ -17,6 +17,7 @@ async function addListenerToGenres() {
     for (const genreItem of genresHtml) {
         genreItem.addEventListener("click", async (event) => {
             location.href = hrefGenresUrl;
+            movieList.classList.remove("wider");
             setTimeout(() => {
                 if (filmsSection.classList.contains("visible")) {
                     filmsSection.classList.remove("visible");
@@ -28,7 +29,7 @@ async function addListenerToGenres() {
             filmsByGenre = await axios
                 .get(
                     `https://api.themoviedb.org/3/discover/movie?api_key=58af3dc3b19432c261816f7a48688477&with_genres=${id}&page=${Math.floor(
-                        Math.random() * 100
+                        Math.random() * 100 + 1
                     )}`
                 )
                 .then((response) => response.data.results);
@@ -109,19 +110,28 @@ searchForm.addEventListener("submit", async (event) => {
         }, 1000);
     } else {
         movieList.innerHTML = "";
+        movieList.classList.add("wider");
+        foundFilm = await axios.get(`https://api.themoviedb.org/3/movie/${foundFilm.id}?api_key=58af3dc3b19432c261816f7a48688477&language=en-US`).then(response => response.data);
+        console.log(foundFilm);
         const filmElement = document.createElement("li");
         filmElement.className = "searched-element";
         let imageUrl = foundFilm.poster_path
             ? `https://image.tmdb.org/t/p/original${foundFilm.poster_path}`
             : "https://cdn.browshot.com/static/images/not-found.png";
+        let filmGenres = foundFilm.genres.map(e => e.name).join(", ");
         filmElement.innerHTML = `
             <div class="searched-element__image">
                 <img src="${imageUrl}" alt="${foundFilm.title}">
             </div>
             <div class="searched-element__info">
                 <h5 id="title">${foundFilm.title}</h5>
+                <p>${foundFilm.tagline}</p>
                 <hr class="hr-list">
                 <p class="searched-info"><span>Release date: </span>${foundFilm.release_date}</p>
+                <p class="searched-info"><span>Runtime: </span>${foundFilm.runtime} minutes</p>
+                <p class="searched-info"><span>Genres: </span>${filmGenres}</p>
+                <p class="searched-info"><span>Budget: </span>$${foundFilm.budget}</p>
+                <p class="searched-info"><span>Revenue: </span>$${foundFilm.revenue}</p>
                 <p class="searched-info"><span>Plot: </span>${foundFilm.overview}</p>
            </div>
         `;
