@@ -7,7 +7,7 @@
 
 body {
     background-color: #333;
-    background-image: url("https://img.wallpapersafari.com/desktop/1920/1080/19/86/9BlpL0.jpg");
+    background-image: url("../images/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -98,4 +98,158 @@ header {
 
 .searched-film h1 {
     margin: auto;
+}
+
+#movie-list {
+    list-style: none;
+    width: 40rem;
+    max-width: 90%;
+    margin: 0rem auto;
+    padding: 0;
+}
+
+.movie-element {
+    cursor: pointer;
+    margin: 1rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    border-radius: 10px;
+    display: flex;
+    background-color: rgba(94, 105, 141, 0.76);
+}
+
+
+.movie-element__image {
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.movie-element__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.movie-element__info {
+    flex: 2;
+    padding: 1rem;
+}
+
+#title {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.film-info {
+    font-family: 'Open Sans', sans-serif !important; 
+}
+
+span {
+    font-weight: bold;
+}
+
+.hr-list {
+    height: 1px;
+    border: none;
+    background-color: white;
+}
+
+#search-film {
+    font-family: 'Open Sans', sans-serif;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#search-film div { 
+    height: fit-content;
+    margin: auto;
+}
+
+input {
+    margin: auto;
+    height: 30pt;
+}
+
+#film-title {
+    font-family: inherit;
+    font-weight: bolder;
+    width: 300pt;
+    padding: 5px 10px;
+    background: rgba(51, 51, 51, 0.6);
+    color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+}
+
+#film-title:focus {
+    border-radius: 10px;
+    outline-style: none;
+    border: 2px solid white;
+    background: rgba(87, 86, 86, 0.8);
+}
+
+#search-btn{
+    font-family: inherit;
+    font-weight: bold;
+    padding: 5px 10px;
+    color: white;
+    border: 2px solid white;
+    background: rgba(51, 51, 51, 0.479);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#search-btn:hover {
+    background: rgba(87, 86, 86, 0.8);
+}
+
+#search-btn:focus {
+    outline: none;
+}
+
+.search-text {
+    text-align: center;
+    margin-bottom: 20pt;
+}
+
+.searched-element {
+    cursor: pointer;
+    margin: 1rem 0;
+    box-shadow: 0 2px 15px rgb(255, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    background-color: rgba(94, 105, 141, 0.76);
+    width: 100%;
+    margin: auto;
+}
+
+
+.searched-element__image {
+    flex: 1;
+    border-radius: 10px 0 0 10px;
+    overflow: hidden;
+}
+
+.searched-element__image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.searched-element__info {
+    flex: 2;
+    padding: 1rem;
+}
+
+.searched-info {
+    margin-top: 10px;
+}
+
+.wider {
+    width: 70rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

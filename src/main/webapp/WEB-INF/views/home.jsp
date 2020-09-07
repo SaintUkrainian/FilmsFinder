@@ -16,10 +16,6 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             rel="stylesheet"
             href="${pageContext.request.contextPath}/styles/home.css"
         />
-        <link
-            rel="stylesheet"
-            href="${pageContext.request.contextPath}/styles/films.css"
-        />
         <script
             src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
             defer
@@ -28,6 +24,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
             src="${pageContext.request.contextPath}/scripts/home.js"
             defer
         ></script>
+        <link rel="shortcut icon" type="image/x-icon" href="${pageContext.request.contextPath}/images/logo-small.png" />
         <title>FilmsFinder</title>
     </head>
     <body>
@@ -70,7 +67,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </svg>
             </div>
 
-            <h1>Yeahh, but it's just a beginning!</h1>
+            <div class="entry-text">
+                <h1>Welcome to my Web Application!</h1>
+            </div>
         </header>
         <hr class="hr-list"/>
         <section id="genres-section">

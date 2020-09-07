@@ -5,11 +5,30 @@
 }
 
 body {
+    height: 100vh;
     background-color: #333;
     font-family: 'Open Sans', sans-serif;
     color: white;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+header a {
+    margin-right: 10pt;
+    text-decoration: none;
+}
+
+/* header a:link {
+    text-decoration: none;
+} */
 
 #movie-list {
     list-style: none;
@@ -20,7 +39,6 @@ body {
 }
 
 .movie-element {
-    cursor: pointer;
     margin: 1rem 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
     border-radius: 10px;
@@ -65,102 +83,17 @@ span {
     background-color: white;
 }
 
-#search-film {
-    font-family: 'Open Sans', sans-serif;
-    height: 15vh;
+.title-and-link {
     display: flex;
-    justify-content: center;
-    align-content: center;
+    justify-content: space-between;
 }
 
-#search-film div { 
-    height: fit-content;
-    margin: auto;
-}
-
-input {
-    margin: auto;
-    height: 30pt;
-}
-
-#film-title {
-    font-family: inherit;
-    font-weight: bolder;
-    width: 300pt;
-    padding: 5px 10px;
-    background: rgba(51, 51, 51, 0.6);
-    color: whitesmoke;
-    border: none;
-    border-radius: 10px;
-}
-
-#film-title:focus {
-    border-radius: 10px;
-    outline-style: none;
-    border: 2px solid white;
-    background: rgba(87, 86, 86, 0.8);
-}
-
-#search-btn{
-    font-family: inherit;
-    font-weight: bold;
-    padding: 5px 10px;
+.title-and-link a{
     color: white;
-    border: 2px solid white;
-    background: rgba(51, 51, 51, 0.479);
-    border-radius: 10px;
-    cursor: pointer;
+    margin: 0px 0px 10px;
+    height: fit-content;
 }
 
-#search-btn:hover {
-    background: rgba(87, 86, 86, 0.8);
-}
-
-#search-btn:focus {
-    outline: none;
-}
-
-.search-text {
-    text-align: center;
-    margin-bottom: 20pt;
-}
-
-.searched-element {
-    cursor: pointer;
-    margin: 1rem 0;
-    box-shadow: 0 2px 15px rgb(255, 255, 255);
-    border-radius: 10px;
-    display: flex;
-    background-color: rgba(94, 105, 141, 0.76);
-    width: 100%;
-    margin: auto;
-}
-
-
-.searched-element__image {
-    flex: 1;
-    border-radius: 10px 0 0 10px;
-    overflow: hidden;
-}
-
-.searched-element__image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.searched-element__info {
-    flex: 2;
-    padding: 1rem;
-}
-
-.searched-info {
-    margin-top: 10px;
-}
-
-.wider {
-    width: 70rem !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.title-and-link a:hover{
+    color: wheat;
 }

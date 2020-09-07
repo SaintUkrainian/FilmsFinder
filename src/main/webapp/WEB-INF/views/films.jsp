@@ -57,18 +57,25 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                 </svg>
             </div>
 
-            <h1>Yeahh, but it's just a beginning!</h1>
+            <h1>FilmsFinder</h1>
+            <a href="http://localhost:8080/">Main Page</a>
         </header>
         <section id="films-by-genre">
             <ul id="movie-list">
-                <c:forEach var="film" items="${films}">
+                <c:forEach var="film" items="${favs}">
                     <li class="movie-element">
                         <input type="hidden" value="${film.id}" alt="${film.title}">
                         <div class="movie-element__image">
                             <img src="" alt="">
                         </div>
                         <div class="movie-element__info">
-                            <h5 id="title">${film.title}</h5>
+                            <div class="title-and-link">
+                                <h1 id="title">${film.title}</h1>
+                                <a href="">More Info</a>
+                            </div>
+                            <hr class="hr-list">
+                            <p><span style="font-weight: bold;">Year: </span> ${film.year}</p>
+                            <span style="font-weight: bold;">Plot:</span><p id="plot"></p>
                         </div>
                     </li>
                 </c:forEach>
