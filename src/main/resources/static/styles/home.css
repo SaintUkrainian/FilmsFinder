@@ -29,6 +29,22 @@ header {
 
 .logo {
     padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    height: fit-content;
+    background: rgba(51, 51, 51, 0.5);
+}
+
+.logo a:hover {
+    background: rgba(99, 98, 98, 0.8);
+    color: wheat;
 }
 
 .genres-list {
@@ -111,10 +127,14 @@ header {
 .movie-element {
     cursor: pointer;
     margin: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 0px 10px rgb(255, 255, 255);
     border-radius: 10px;
     display: flex;
     background-color: rgba(94, 105, 141, 0.76);
+}
+
+.movie-element:hover {
+    background-color: rgba(255, 217, 0, 0.459);
 }
 
 
@@ -223,6 +243,10 @@ input {
     background-color: rgba(94, 105, 141, 0.76);
     width: 100%;
     margin: auto;
+}
+
+.searched-element:hover {
+    background-color: rgba(255, 217, 0, 0.459);
 }
 
 

@@ -12,6 +12,7 @@ body {
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
 
 }
 
@@ -24,6 +25,28 @@ header {
 header a {
     margin-right: 10pt;
     text-decoration: none;
+}
+
+.logo {
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+
+.logo a {
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 10px 15px;
+    height: fit-content;
+    background: rgba(51, 51, 51, 0.5);
+}
+
+.logo a:hover {
+    background: rgba(99, 98, 98, 0.8);
+    color: wheat;
 }
 
 /* header a:link {
@@ -40,10 +63,14 @@ header a {
 
 .movie-element {
     margin: 1rem 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    box-shadow: 0 2px 15px rgb(255, 255, 255);
     border-radius: 10px;
     display: flex;
     background-color: rgba(94, 105, 141, 0.76);
+}
+
+.movie-element:hover {
+    background-color: rgba(255, 6, 6, 0.384);
 }
 
 
@@ -90,7 +117,7 @@ span {
 
 .title-and-link a{
     color: white;
-    margin: 0px 0px 10px;
+    margin: 0px 10px 10px;
     height: fit-content;
 }
 

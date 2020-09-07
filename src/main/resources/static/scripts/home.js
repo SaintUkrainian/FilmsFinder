@@ -58,6 +58,10 @@ async function addListenerToGenres() {
                         <p class="film-info"><span>Plot: </span>${film.overview}</p>
                     </div>
                 `;
+                filmElement.addEventListener("click", () => {
+                    axios.post("http://localhost:8080/film", filmJava);
+                    console.log("Posting" + filmJava);
+                });
                 movieList.appendChild(filmElement);
             }
             setTimeout(() => {
@@ -139,6 +143,15 @@ searchForm.addEventListener("submit", async (event) => {
                     <p class="searched-info"><span>Plot: </span>${foundFilm.overview}</p>
                </div>
             `;
+            const filmJava = {
+                id: foundFilm.id,
+                title: foundFilm.title,
+                year: foundFilm.release_date.slice(0, 4),
+            };
+            filmElement.addEventListener("click", () =>{
+                console.log("Posing " + filmJava);
+                axios.post("http://localhost:8080/film", filmJava);
+            })
             movieList.appendChild(filmElement);
             setTimeout(() => {
                 filmsSection.classList.add("visible");

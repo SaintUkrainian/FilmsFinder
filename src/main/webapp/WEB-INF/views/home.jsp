@@ -65,6 +65,8 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     />
                     <circle cx="100" cy="21.0256" r="12.8205" fill="white" />
                 </svg>
+
+                <a href="http://localhost:8080/favouriteFilms">Favourite Films</a>
             </div>
 
             <div class="entry-text">

@@ -55,11 +55,13 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                     />
                     <circle cx="100" cy="21.0256" r="12.8205" fill="white" />
                 </svg>
-            </div>
 
-            <h1>FilmsFinder</h1>
-            <a href="http://localhost:8080/">Main Page</a>
+                <a href="http://localhost:8080/">Main Page</a>
+            </div>
         </header>
+        <div>
+            <h1 style="text-align: center; margin: 20px;">Favourite Films</h1>
+        </div>
         <section id="films-by-genre">
             <ul id="movie-list">
                 <c:forEach var="film" items="${favs}">
