@@ -71,6 +71,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
 
             <div class="entry-text">
                 <h1>Welcome to my Web Application!</h1>
+                <p>How does it work? Search for films and add them to your favourites.</p>
             </div>
         </header>
         <hr class="hr-list"/>
@@ -158,6 +159,7 @@ uri="http://java.sun.com/jsp/jstl/core" %>
         </section>
         <hr class="hr-list"/>
         <section class="films" id="films-section">
+            <p style="text-align: center;margin: auto;margin-top: 20pt; margin-bottom: 10pt;border-bottom: 2px solid white; width: fit-content;">Click on film to add to favourites, click again to remove.</p>
             <ul id="movie-list"></ul>
         </section>
         <section id="searched-film"></section>

@@ -13,6 +13,60 @@ const genresHtml = document.querySelectorAll(".genre-btn");
 
 let filmsByGenre = [];
 
+
+function toggleLiked(item) {
+    if (item.classList.contains("green")) {
+        item.classList.add("brighter-white");
+        item.classList.remove("green");
+        item.classList.remove("brighter-green");
+    } else {
+        item.classList.remove("brighter-white");
+        item.classList.add("brighter-green");
+        item.classList.add("green");
+    }
+}
+
+function setHoverForSingleItem(item) {
+    item.addEventListener("mouseenter", (event) => {
+        if (item.classList.contains("green")) {
+            item.classList.add("brighter-green");
+        } else {
+            item.classList.add("brighter-white");
+        }
+    });
+
+    item.addEventListener("mouseleave", (event) => {
+        if (item.classList.contains("green")) {
+            item.classList.remove("brighter-green");
+        } else {
+            item.classList.remove("brighter-white");
+        }
+    });
+}
+
+function setHoverForFilmItem() {
+    const listItems = movieList.querySelectorAll("li");
+    for (const item of listItems) {
+        item.addEventListener("mouseenter", (event) => {
+
+            if (item.classList.contains("green")) {
+                item.classList.add("brighter-green");
+            } else {
+                item.classList.add("brighter-white");
+            }
+        });
+
+        item.addEventListener("mouseleave", (event) => {
+
+            if (item.classList.contains("green")) {
+                item.classList.remove("brighter-green");
+            } else {
+                item.classList.remove("brighter-white");
+            }
+        });
+    }
+}
+
 async function addListenerToGenres() {
     for (const genreItem of genresHtml) {
         genreItem.addEventListener("click", async (event) => {
@@ -59,11 +113,17 @@ async function addListenerToGenres() {
                     </div>
                 `;
                 filmElement.addEventListener("click", () => {
-                    axios.post("http://localhost:8080/film", filmJava);
-                    console.log("Posting" + filmJava);
+                    if(filmElement.classList.contains("green")){
+                        axios.delete(`http://localhost:8080/film/${filmElement.getAttribute("id")}`);
+                        toggleLiked(filmElement);
+                    } else{
+                        axios.post("http://localhost:8080/film", filmJava);
+                        toggleLiked(filmElement);
+                    }
                 });
                 movieList.appendChild(filmElement);
             }
+            setHoverForFilmItem();
             setTimeout(() => {
                 axios.post(postFilmsUrl, filmsJava);
                 location.href = hrefFilmsUrl;
@@ -91,9 +151,7 @@ searchForm.addEventListener("submit", async (event) => {
             }
         }, 200);
         const regex = /,\s|\s/;
-        console.log("Searching for film with title = " + input.value);
         const title = input.value.trim().toLowerCase().split(regex).join("+");
-        console.log(title);
         const filmsByTitle = await axios
             .get(
                 `https://api.themoviedb.org/3/search/movie?api_key=58af3dc3b19432c261816f7a48688477&query=${title}`
@@ -120,7 +178,6 @@ searchForm.addEventListener("submit", async (event) => {
             movieList.innerHTML = "";
             movieList.classList.add("wider");
             foundFilm = await axios.get(`https://api.themoviedb.org/3/movie/${foundFilm.id}?api_key=58af3dc3b19432c261816f7a48688477&language=en-US`).then(response => response.data);
-            console.log(foundFilm);
             const filmElement = document.createElement("li");
             filmElement.className = "searched-element";
             let imageUrl = foundFilm.poster_path
@@ -148,10 +205,17 @@ searchForm.addEventListener("submit", async (event) => {
                 title: foundFilm.title,
                 year: foundFilm.release_date.slice(0, 4),
             };
+            filmElement.setAttribute("id", foundFilm.id);
             filmElement.addEventListener("click", () =>{
-                console.log("Posing " + filmJava);
-                axios.post("http://localhost:8080/film", filmJava);
-            })
+                if(filmElement.classList.contains("green")){
+                    axios.delete(`http://localhost:8080/film/${filmElement.getAttribute("id")}`);
+                    toggleLiked(filmElement);
+                } else{
+                    axios.post("http://localhost:8080/film", filmJava);
+                    toggleLiked(filmElement);
+                }
+            });
+            setHoverForSingleItem(filmElement);
             movieList.appendChild(filmElement);
             setTimeout(() => {
                 filmsSection.classList.add("visible");

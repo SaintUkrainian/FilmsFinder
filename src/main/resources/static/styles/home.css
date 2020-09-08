@@ -11,13 +11,19 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     color: white;
     width: 100%;
 }
 
 header {
     height: 100vh;
+}
+
+.entry-text {
+    text-align: center;
+    margin-top: 10%;
+    font-size: larger;
 }
 
 #genres-section {
@@ -48,7 +54,7 @@ header {
 }
 
 .genres-list {
-    font-family: 'Squada One', cursive;
+    font-family: "Squada One", cursive;
     font-size: 32px;
     display: flex;
     flex-direction: row;
@@ -77,6 +83,7 @@ header {
 
 .visible {
     display: flex !important;
+    flex-direction: column;
 }
 
 .backdrop {
@@ -133,11 +140,6 @@ header {
     background-color: rgba(94, 105, 141, 0.76);
 }
 
-.movie-element:hover {
-    background-color: rgba(255, 217, 0, 0.459);
-}
-
-
 .movie-element__image {
     flex: 1;
     border-radius: 10px 0 0 10px;
@@ -161,7 +163,7 @@ header {
 }
 
 .film-info {
-    font-family: 'Open Sans', sans-serif !important; 
+    font-family: "Open Sans", sans-serif !important;
 }
 
 span {
@@ -175,14 +177,14 @@ span {
 }
 
 #search-film {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     height: 15vh;
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-#search-film div { 
+#search-film div {
     height: fit-content;
     margin: auto;
 }
@@ -210,7 +212,7 @@ input {
     background: rgba(87, 86, 86, 0.8);
 }
 
-#search-btn{
+#search-btn {
     font-family: inherit;
     font-weight: bold;
     padding: 5px 10px;
@@ -236,17 +238,13 @@ input {
 
 .searched-element {
     cursor: pointer;
-    margin: 1rem 0;
     box-shadow: 0 2px 15px rgb(255, 255, 255);
     border-radius: 10px;
     display: flex;
     background-color: rgba(94, 105, 141, 0.76);
     width: 100%;
     margin: auto;
-}
-
-.searched-element:hover {
-    background-color: rgba(255, 217, 0, 0.459);
+    margin-top: 10pt;
 }
 
 
@@ -276,4 +274,16 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.green {
+    background-color: rgba(145, 125, 14, 0.466);
+}
+
+.brighter-green {
+    background-color: rgba(187, 165, 44, 0.466);
+}
+
+.brighter-white {
+    background-color: rgba(131, 143, 184, 0.76);
 }

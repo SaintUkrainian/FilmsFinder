@@ -67,6 +67,7 @@ header a {
     border-radius: 10px;
     display: flex;
     background-color: rgba(94, 105, 141, 0.76);
+    cursor: pointer;
 }
 
 .movie-element:hover {

@@ -77,6 +77,9 @@ uri="http://java.sun.com/jsp/jstl/core" %>
                             </div>
                             <hr class="hr-list">
                             <p><span style="font-weight: bold;">Year: </span> ${film.year}</p>
+                            <div style="display: flex;">
+                                <span style="font-weight: bold;">Genres:</span><p id="genres" style="margin-left: 5pt;"></p>
+                            </div>
                             <span style="font-weight: bold;">Plot:</span><p id="plot"></p>
                         </div>
                     </li>
