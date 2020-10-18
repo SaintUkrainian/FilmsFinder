@@ -98,7 +98,7 @@ header a {
 }
 
 .film-info {
-    font-family: 'Open Sans', sans-serif !important; 
+    font-family: 'Open Sans', sans-serif !important;
 }
 
 span {
@@ -116,12 +116,12 @@ span {
     justify-content: space-between;
 }
 
-.title-and-link a{
+.title-and-link a {
     color: white;
     margin: 0px 10px 10px;
     height: fit-content;
 }
 
-.title-and-link a:hover{
+.title-and-link a:hover {
     color: wheat;
 }

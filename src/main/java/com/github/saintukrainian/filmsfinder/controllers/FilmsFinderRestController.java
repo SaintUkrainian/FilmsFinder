@@ -21,7 +21,7 @@ public class FilmsFinderRestController {
 
 
     @PostMapping("/film")
-    public void postFilm(@RequestBody Film film){
+    public void postFilm(@RequestBody Film film) {
         rep.save(film);
         System.out.println("Succesfully posted!");
     }
@@ -37,5 +37,5 @@ public class FilmsFinderRestController {
         HelperClass.getHelper().setFilms(films);
         films.forEach(film -> System.out.println(film));
     }
-    
+
 }

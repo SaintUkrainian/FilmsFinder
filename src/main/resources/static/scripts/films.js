@@ -29,7 +29,7 @@ async function fillInFilms() {
                 event.preventDefault();
                 location.href = `https://www.google.com/search?q=${filmInfo.title.toLowerCase()}+movie`;
             });
-            
+
         // removing film from favourites
         filmElement.addEventListener("click", (event) => {
             if (event.target.tagName === "A") {

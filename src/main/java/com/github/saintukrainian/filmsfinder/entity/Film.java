@@ -10,16 +10,17 @@ import javax.persistence.Table;
 public class Film {
 
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
-    
+
     @Column(name = "title")
     private String title;
 
-    @Column(name="year_of")
+    @Column(name = "year_of")
     private int year;
 
-    public Film() {}
+    public Film() {
+    }
 
     public Film(int id, String title, int year) {
         this.id = id;
@@ -56,10 +57,10 @@ public class Film {
     @Override
     public String toString() {
         return "{" +
-            " id='" + getId() + "'" +
-            ", title='" + getTitle() + "'" +
-            ", year='" + getYear() + "'" +
-            "}";
+                " id='" + getId() + "'" +
+                ", title='" + getTitle() + "'" +
+                ", year='" + getYear() + "'" +
+                "}";
     }
 
 }

@@ -23,7 +23,7 @@ public class FilmsFinderController {
     }
 
     @GetMapping("/films")
-    public String filmsPage(Model model){
+    public String filmsPage(Model model) {
         model.addAttribute("films", HelperClass.getHelper().getFilms());
 
         return "films";
@@ -37,5 +37,4 @@ public class FilmsFinderController {
     }
 
 
-    
 }

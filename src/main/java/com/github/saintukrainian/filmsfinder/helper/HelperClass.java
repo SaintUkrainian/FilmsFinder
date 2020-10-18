@@ -18,6 +18,7 @@ public class HelperClass {
         }
         return helper;
     }
+
     public void setFilms(List<Film> films) {
         this.films = films;
         System.out.println("Films are set!");

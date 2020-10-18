@@ -86,7 +86,7 @@ async function addListenerToGenres() {
                 }
             }, 300);
             backdrop.classList.add("visible");
-            
+
             movieList.innerHTML = "";
             // getting id for further manipulations
             const id = event.target.closest("li").getAttribute("id");
@@ -130,13 +130,13 @@ async function addListenerToGenres() {
                         <p class="film-info"><span>Plot: </span>${film.overview}</p>
                     </div>
                 `;
-                
+
                 // setting listener for adding film to favourites
                 filmElement.addEventListener("click", () => {
-                    if(filmElement.classList.contains("green")){
+                    if (filmElement.classList.contains("green")) {
                         axios.delete(`http://localhost:8080/film/${filmElement.getAttribute("id")}`);
                         toggleLiked(filmElement);
-                    } else{
+                    } else {
                         axios.post("http://localhost:8080/film", filmJava);
                         toggleLiked(filmElement);
                     }
@@ -145,7 +145,7 @@ async function addListenerToGenres() {
                 // appending to ul 
                 movieList.appendChild(filmElement);
             }
-            
+
             // setting smart hovering for films which we've got before
             setHoverForFilmItem();
 
@@ -171,10 +171,10 @@ searchForm.addEventListener("submit", async (event) => {
     // getting user's input
     const input = document.getElementById("film-title");
     // checking if nothing's wrong with it
-    if(input.value.trim() === ""){
+    if (input.value.trim() === "") {
         input.value = "";
         return;
-    } else{
+    } else {
         backdrop.classList.add("visible");
         location.href = hrefGenresUrl;
         setTimeout(() => {
@@ -249,14 +249,14 @@ searchForm.addEventListener("submit", async (event) => {
                 title: foundFilm.title,
                 year: foundFilm.release_date.slice(0, 4),
             };
-    
+
             filmElement.setAttribute("id", foundFilm.id);
 
-            filmElement.addEventListener("click", () =>{
-                if(filmElement.classList.contains("green")){
+            filmElement.addEventListener("click", () => {
+                if (filmElement.classList.contains("green")) {
                     axios.delete(`http://localhost:8080/film/${filmElement.getAttribute("id")}`);
                     toggleLiked(filmElement);
-                } else{
+                } else {
                     axios.post("http://localhost:8080/film", filmJava);
                     toggleLiked(filmElement);
                 }
